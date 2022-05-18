@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option go_package="github.com/f-bahesna/grpc-client/cart";
+
+message CartRequest {
+  string sku = 1;
+}
+
+message CartData {
+  string sku = 1;
+  string name = 2;
+  string description = 3;
+}
+
+service Cart {
+  rpc FindCartBySku(CartRequest) returns (CartData){}
+}
